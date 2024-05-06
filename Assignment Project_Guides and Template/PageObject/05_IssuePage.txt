@@ -1,0 +1,60 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+
+Documentation	Issue Test scenario. CRUD Operation: Create, Read, Update, Delete
+
+# TODO: Write Precondition and Postcondition, Tags 
+
+Pre Condition	Open Browser, Log in, Create a Project
+Post Condition	Sign out, Close All Browsers
+Tags	Issue, CRUD, Testing
+
+#******************* Common Variables ********************
+
+
+*** Variables ***
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Issue creation field variables, Updated name of the issue
+
+NewIssueUrl = https://gitlab.com/group-slug-here/project-slug-here/-/issues/new
+IssuesUrl = https://gitlab.com/group-slug-here/project-slug-here/-/issues
+IssueTitle = FTS_Issue
+
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive Test Cases and Test Process steps
+
+# Positive Test examples are below write test process steps for each below test case
+
+	Create issue
+		- Navigate to the issue creation page
+    	- Fill in the required details for the new issue
+    	- Click on the "Create" button
+    	- Verify successful creation message
+
+ 	Update name of issue
+		- Navigate to the issue details page
+    	- Click on the "Edit" button
+    	- Modify the name of the issue
+    	- Click on the "Save" button
+    	- Verify successful update message
+
+	Create second issue with privious updated name
+		- Navigate to the issue creation page
+    	- Fill in the required details, including the updated name
+    	- Click on the "Create" button
+    	- Verify successful creation message
+
+    Delete first issue
+		- Navigate to the issue details page of the first issue
+    	- Click on the "Delete" button
+    	- Confirm deletion
+    	- Verify successful deletion message

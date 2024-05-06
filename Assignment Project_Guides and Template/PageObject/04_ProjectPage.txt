@@ -1,0 +1,75 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+
+# TODO: Write Dcocumentation
+
+Documentation	Project Test scenario. CRUD Operation: Create, Read, Update, Delete
+
+# TODO: Write Precondition, Postcondition, Tags
+
+Pre Condition	Ensure the project creation page is accessible 
+Post Condition	Verify the project has been successfully created
+Tags	Project, CRUD, Testing
+
+#******************* Common Variables ********************
+
+*** Variables ***
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Project creation field variables
+
+NewProjectUrl = https://gitlab.com/projects/new
+ProjectsUrl = https://gitlab.com/dashboard/projects
+ProjectName = FST
+
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive and Negative Test Cases and Test Process steps
+
+# Positive Test examples are below write test process steps for each below test case
+
+	Create blank project
+		- Navigate to the project creation page
+   		- Enter a unique project name
+    	- Click on the "Create" button
+    	- Verify successful creation message
+
+	Create template project 
+		- Navigate to the project creation page
+    	- Select a template
+    	- Enter a unique project name
+    	- Click on the "Create" button
+    	- Verify successful creation message
+
+	Update name of template project
+		- Navigate to the project settings page
+    	- Edit the project name
+    	- Save the changes
+    	- Verify successful update message
+
+	Delete template project
+		- Navigate to the project settings page.
+    	- Click on the "Delete" button.
+    	- Confirm deletion.
+    	- Verify successful deletion message.
+
+	Valide that message is showing Project 'First project ' was successfully created.
+		- Navigate to the project list page.
+    	- Verify the presence of the success message.
+
+# Negative Test examples are below write test process steps for each below test case
+
+	Create a blank project with the previous same name
+		- Navigate to the project creation page.
+    	- Enter an existing project name.
+    	- Click on the "Create" button.
+    	- Verify error message indicating duplicate name.
+
+

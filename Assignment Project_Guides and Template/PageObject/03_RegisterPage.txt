@@ -1,0 +1,80 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+
+# TODO: Write Documentation e.g. User Registration Test scenario with verification, valid and invalid credentials.
+
+Documentation	Testing user registration with validation, using both valid and invalid credentials.
+
+# TODO: Write Precondition, Postcondition, Tags
+
+Pre Condition	Open Browser
+Post Condition	Close All Browsers
+Tags	Signup, Registration
+
+#******************* Common Variables ********************
+
+*** Variables ***
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Registration field variables
+
+LoginUrl = https://gitlab.com/users/sign_up
+UserName = VePol
+Email= veronika.pollastrini@gmail.com
+Password= ****************
+Invalid_Email= veronikapolla
+Valid_Email= vep00002@laurea.fi
+Invalid_Password= 123456
+
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# TODO: Write Positive and Negative Test Cases and Test Process steps (Think about possible test cases)
+
+# Positive Test examples are below write test process steps for each below test case
+
+	
+	Verify that a user can register with valid credentials.
+	- Navigate to the registration page.
+	- Enter a valid username and password.
+	- Click the "Register" button.
+	- Verify successful registration message.
+
+# Negative Test examples keywords are below write test process steps for each below test case 
+
+	Register a user with the same username as above:
+		- Navigate to the registration page.
+		- Enter the same username as used in the positive test case.
+		- Enter a valid email and password.
+		- Click the "Register" button.
+		- Verify error message indicating username already exists.
+
+	Register a user with an empty password:
+		- Navigate to the registration page.
+		- Enter a valid username and an empty password field.
+		- Enter a valid email.
+		- Click the "Register" button.
+		- Verify error message indicating password cannot be empty.
+
+	Register a user with an invalid email:
+		- Navigate to the registration page.
+		- Enter a valid username and password.
+		- Enter an email address that is not in the correct format.
+		- Click the "Register" button.
+		- Verify error message indicating invalid email format.
+
+	Register a user without completing the recaptcha:
+		- Navigate to the registration page.
+		- Enter a valid username and password.
+		- Enter a valid email.
+		- Do not complete the recaptcha verification.
+		- Click the "Register" button.
+		- Verify error message indicating recaptcha verification is required.
+
+
